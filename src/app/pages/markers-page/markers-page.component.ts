@@ -19,10 +19,10 @@ interface Marker {
 })
 export class MarkersPageComponent implements AfterViewInit {
 
-  divElement = viewChild<ElementRef>('map');
+  markers = signal<Marker[]>([]);
   zoom = signal(14);
   map = signal<mapboxgl.Map | null>(null);
-  markers = signal<Marker[]>([]);
+  divElement = viewChild<ElementRef>('map');
 
 
   async ngAfterViewInit() {
