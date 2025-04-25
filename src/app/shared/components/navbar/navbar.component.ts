@@ -22,13 +22,13 @@ export class NavbarComponent {
   pageTitle$ = this.router.events.pipe(
     filter(event => event instanceof NavigationEnd),
     tap(
-      event => console.log(event)
+      event => console.log('event', event)
     ),
     map(
       event => event.url
     ),
     map(
-      url => this.routes.find(route => `/${route.path}` === url)?.title
+      url => this.routes.find(route => `/${route.path}` === url)?.title ?? 'fullScreen Map'
     ),
   )
 }

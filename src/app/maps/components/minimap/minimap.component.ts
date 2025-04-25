@@ -13,7 +13,7 @@ export class MinimapComponent implements AfterViewInit {
   divElement = viewChild<ElementRef>('map');
 
   houseCoordinates = input.required<{lng:number, lat:number}>({});
-
+//comentario
 
   async ngAfterViewInit() {
     console.log('coordenadas', this.houseCoordinates());
